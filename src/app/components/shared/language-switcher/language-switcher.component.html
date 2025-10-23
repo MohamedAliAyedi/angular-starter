@@ -1,0 +1,8 @@
+<p-select
+  [styleClass]="'w-40'"
+  [options]="languages"
+  optionLabel="name"
+  optionValue="code"
+  [(ngModel)]="selectedLanguage"
+  (ngModelChange)="switchLanguage(selectedLanguage())">
+</p-select>

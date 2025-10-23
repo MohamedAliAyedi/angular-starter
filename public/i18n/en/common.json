@@ -1,0 +1,8 @@
+{
+  "sidebar": {
+    "general": "General",
+    "dashboard": "Dashboard",
+    "users": "Users",
+    "settings": "Settings"
+  }
+}

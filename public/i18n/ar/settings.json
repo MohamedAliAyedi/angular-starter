@@ -1,0 +1,102 @@
+{
+  "settings": {
+    "emailTrace": {
+      "title": "آثار البريد الإلكتروني",
+      "breadcrumb": {
+        "parametres": "الإعدادات",
+        "emailTrace": "آثار البريد الإلكتروني"
+      },
+      "table": {
+        "singular": "أثر البريد الإلكتروني",
+        "plural": "آثار البريد الإلكتروني",
+        "type": "النوع",
+        "object": "الموضوع",
+        "recipient": "المستلم",
+        "success": "الحالة",
+        "successSent": "مرسل",
+        "successFailed": "فشل",
+        "date": "تاريخ الإرسال",
+        "createdAt": "تاريخ الإنشاء",
+        "updatedAt": "تاريخ التحديث",
+        "resend": "إعادة الإرسال",
+        "inspect": "فحص"
+      },
+      "resend": {
+        "confirmTitle": "تأكيد إعادة الإرسال",
+        "confirmDescription": "هل أنت متأكد من أنك تريد إعادة إرسال البريد الإلكتروني '{{ email }}'؟"
+      },
+      "inspect": {
+        "title": "محتوى البريد الإلكتروني",
+        "description": "محتوى البريد الإلكتروني '{{ email }}'"
+      },
+      "message": {
+        "success": {
+          "resent": "تم إعادة إرسال البريد الإلكتروني بنجاح"
+        },
+        "error": {
+          "loading": "حدث خطأ أثناء استرجاع آثار البريد الإلكتروني",
+          "resent": "حدث خطأ أثناء إعادة إرسال البريد الإلكتروني"
+        }
+      }
+    }
+  },
+  "contractingAuthority": {
+    "ac": {
+      "form": {
+        "commissionType": {
+          "tutelle": "Commission Tutelle",
+          "interne": "Commission Interne", 
+          "autre": "Autre Commission"
+        },
+        "com": {
+          "label": "اللجنة",
+          "placeholder": "اختر لجنة"
+        },
+        "email": {
+          "label": "البريد الإلكتروني",
+          "placeholder": "أدخل البريد الإلكتروني"
+        },
+        "logo": {
+          "label": "الشعار",
+          "placeholder": "أدخل رابط الشعار"
+        },
+        "istTutel": {
+          "label": "هل هي وصاية؟",
+          "placeholder": "هل هي وصاية؟"
+        },
+        "adresse": {
+          "label": "العنوان",
+          "placeholder": "أدخل العنوان"
+        },
+        "compAdresse": {
+          "label": "مكمل العنوان",
+          "placeholder": "أدخل مكمل العنوان"
+        },
+        "tel1": {
+          "label": "الهاتف 1",
+          "placeholder": "أدخل الهاتف 1"
+        },
+        "tel2": {
+          "label": "الهاتف 2",
+          "placeholder": "أدخل الهاتف 2"
+        },
+        "fax": {
+          "label": "فاكس",
+          "placeholder": "أدخل الفاكس"
+        },
+        "codePostal": {
+          "label": "الرمز البريدي",
+          "placeholder": "أدخل الرمز البريدي"
+        },
+        "ville": {
+          "label": "المدينة",
+          "placeholder": "أدخل المدينة"
+        },
+        "pays": {
+          "label": "الدولة",
+          "placeholder": "اختر الدولة"
+        }
+      }
+    }
+  }
+}

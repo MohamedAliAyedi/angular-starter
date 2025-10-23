@@ -1,0 +1,13 @@
+.layout-main-container {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  overflow: hidden;
+  transition: margin-left var(--layout-section-transition-duration);
+  height: 100%;
+}
+
+.layout-main {
+  flex: 1 1 auto;
+  padding-bottom: 2rem;
+}

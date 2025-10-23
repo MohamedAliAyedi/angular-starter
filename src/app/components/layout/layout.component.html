@@ -1,0 +1,14 @@
+<div class="layout-wrapper" [ngClass]="containerClass">
+  <sm-layout-topbar></sm-layout-topbar>
+  <div class="layout-main-container">
+    <sm-layout-sidebar></sm-layout-sidebar>
+    <div class="layout-main overflow-auto">
+      <div class="container mx-auto pr-6">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+  <sm-layout-footer></sm-layout-footer>
+  <div class="layout-mask animate-fadein"></div>
+  <p-toast [position]="'bottom-right'"></p-toast>
+</div>
