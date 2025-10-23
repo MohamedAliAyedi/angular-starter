@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'sm-test',
+  selector: 'tia-test',
   imports: [],
   templateUrl: './test.component.html',
   styleUrl: './test.component.scss',

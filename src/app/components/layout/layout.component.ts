@@ -10,7 +10,7 @@ import { ToastModule } from 'primeng/toast';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
-  selector: 'sm-layout-main',
+  selector: 'tia-layout-main',
   standalone: true,
   imports: [CommonModule, RouterModule, LayoutTopbarComponent, LayoutSidebarComponent, LayoutFooterComponent, ToastModule, TranslateModule],
   templateUrl: `./layout.component.html`,

@@ -6,7 +6,7 @@ import { SelectModule } from 'primeng/select';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'sm-language-switcher',
+  selector: 'tia-language-switcher',
   templateUrl: './language-switcher.component.html',
   imports: [CommonModule, SelectModule, FormsModule],
   styleUrl: './language-switcher.component.scss',

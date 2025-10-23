@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 
 @Component({
   standalone: true,
-  selector: 'sm-layout-footer',
+  selector: 'tia-layout-footer',
   imports: [CommonModule],
   templateUrl: `./layout-footer.component.html`,
 })

@@ -36,8 +36,6 @@
     "@types/quill": "^2.0.14",
     "chart.js": "^4.4.9",
     "date-fns": "^4.1.0",
-    "keycloak-angular": "^19.0.2",
-    "keycloak-js": "^26.1.4",
     "lodash": "^4.17.21",
     "primeicons": "^7.0.0",
     "primeng": "^19.0.10",

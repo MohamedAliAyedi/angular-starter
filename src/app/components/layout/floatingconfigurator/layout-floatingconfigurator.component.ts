@@ -5,7 +5,7 @@ import { LayoutService } from '../layout.service';
 import { LayoutConfiguratorComponent } from '../configurator/layout-configurator.component';
 
 @Component({
-  selector: 'sm-layout-floating-configurator',
+  selector: 'tia-layout-floating-configurator',
   imports: [ButtonModule, StyleClassModule, LayoutConfiguratorComponent],
   templateUrl: './layout-floating-configurator.component.html',
 })

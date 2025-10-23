@@ -7,7 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { TranslationLoaderService } from '@/translation-loader.service';
 
 @Component({
-  selector: 'sm-layout-menu',
+  selector: 'tia-layout-menu',
   standalone: true,
   imports: [CommonModule, LayoutMenuItemComponent, RouterModule],
   templateUrl: `./layout-menu.component.html`,

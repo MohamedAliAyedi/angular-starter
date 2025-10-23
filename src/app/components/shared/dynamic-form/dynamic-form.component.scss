@@ -1,0 +1,22 @@
+.dynamic-form {
+  .form-field {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      font-size: 0.875rem;
+      color: var(--text-color);
+    }
+
+    input,
+    textarea,
+    ::ng-deep .p-dropdown,
+    ::ng-deep .p-calendar,
+    ::ng-deep .p-multiselect,
+    ::ng-deep .p-inputnumber {
+      &.ng-invalid.ng-dirty {
+        border-color: var(--red-500);
+      }
+    }
+  }
+}

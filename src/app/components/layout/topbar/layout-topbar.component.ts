@@ -8,7 +8,7 @@ import { LayoutConfiguratorComponent } from '../configurator/layout-configurator
 import { LanguageSwitcherComponent } from '../../shared/language-switcher/language-switcher.component';
 
 @Component({
-  selector: 'sm-layout-topbar',
+  selector: 'tia-layout-topbar',
   standalone: true,
   imports: [RouterModule, CommonModule, StyleClassModule, LayoutConfiguratorComponent, LanguageSwitcherComponent],
   templateUrl: `./layout-topbar.component.html`,

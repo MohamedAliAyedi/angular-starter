@@ -1,0 +1,148 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="dynamic-form">
+  <div class="grid gap-4" [ngClass]="config.columns === 1 ? 'grid-cols-1' : 'grid-cols-2'">
+    @for (field of config.fields; track field.name) {
+      <div [ngClass]="getFieldColspan(field)" class="form-field">
+        <label [for]="field.name" class="block mb-2 font-medium">
+          {{ field.label }}
+          @if (field.required) {
+            <span class="text-red-500 ml-1">*</span>
+          }
+        </label>
+
+        @switch (field.type) {
+          @case ('text') {
+            <input
+              pInputText
+              [id]="field.name"
+              [formControlName]="field.name"
+              [placeholder]="field.placeholder || ''"
+              [class]="'w-full ' + getFieldClasses(field)"
+            />
+          }
+
+          @case ('email') {
+            <input
+              pInputText
+              type="email"
+              [id]="field.name"
+              [formControlName]="field.name"
+              [placeholder]="field.placeholder || ''"
+              [class]="'w-full ' + getFieldClasses(field)"
+            />
+          }
+
+          @case ('number') {
+            <p-inputnumber
+              [inputId]="field.name"
+              [formControlName]="field.name"
+              [placeholder]="field.placeholder || ''"
+              [min]="field.min"
+              [max]="field.max"
+              [styleClass]="'w-full ' + getFieldClasses(field)"
+            />
+          }
+
+          @case ('textarea') {
+            <textarea
+              pTextarea
+              [id]="field.name"
+              [formControlName]="field.name"
+              [placeholder]="field.placeholder || ''"
+              [rows]="field.rows || 3"
+              [class]="'w-full ' + getFieldClasses(field)"
+            ></textarea>
+          }
+
+          @case ('dropdown') {
+            <p-select
+              [inputId]="field.name"
+              [formControlName]="field.name"
+              [options]="field.options || []"
+              [placeholder]="field.placeholder || 'Sélectionnez une option'"
+              optionLabel="label"
+              optionValue="value"
+              [styleClass]="'w-full ' + getFieldClasses(field)"
+            />
+          }
+
+          @case ('multiselect') {
+            <p-multiselect
+              [inputId]="field.name"
+              [formControlName]="field.name"
+              [options]="field.options || []"
+              [placeholder]="field.placeholder || 'Sélectionnez des options'"
+              optionLabel="label"
+              optionValue="value"
+              [styleClass]="'w-full ' + getFieldClasses(field)"
+            />
+          }
+
+          @case ('calendar') {
+            <p-datepicker
+              [inputId]="field.name"
+              [formControlName]="field.name"
+              [placeholder]="field.placeholder || 'jj/mm/aaaa'"
+              [dateFormat]="field.dateFormat || 'dd/mm/yy'"
+              [showTime]="field.showTime || false"
+              [styleClass]="'w-full ' + getFieldClasses(field)"
+            />
+          }
+
+          @case ('checkbox') {
+            <div class="flex align-items-center">
+              <p-checkbox
+                [inputId]="field.name"
+                [formControlName]="field.name"
+                [binary]="true"
+                [class]="getFieldClasses(field)"
+              />
+            </div>
+          }
+
+          @case ('radio') {
+            <div class="flex flex-column gap-3">
+              @for (option of field.options; track option.value) {
+                <div class="flex align-items-center">
+                  <p-radiobutton
+                    [inputId]="field.name + '_' + option.value"
+                    [formControlName]="field.name"
+                    [value]="option.value"
+                    [class]="getFieldClasses(field)"
+                  />
+                  <label [for]="field.name + '_' + option.value" class="ml-2">
+                    {{ option.label }}
+                  </label>
+                </div>
+              }
+            </div>
+          }
+        }
+
+        @if (isFieldInvalid(field.name)) {
+          <small class="text-red-500 mt-1 block">
+            {{ getFieldError(field.name) }}
+          </small>
+        }
+      </div>
+    }
+  </div>
+
+  <div class="flex gap-3 mt-6 justify-content-end">
+    @if (showCancelButton && cancelButtonLabel) {
+      <p-button
+        [label]="cancelButtonLabel"
+        severity="secondary"
+        type="button"
+        (onClick)="onCancel()"
+      ></p-button>
+    }
+    @if (showSubmitButton) {
+      <p-button
+        [label]="submitButtonLabel"
+        type="submit"
+        icon="pi pi-arrow-right"
+        iconPos="right"
+      ></p-button>
+    }
+  </div>
+</form>

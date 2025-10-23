@@ -12,7 +12,6 @@ export function roleBasedGuard(requiredRoles: string[]): CanActivateFn {
       filter(ready => ready),
       take(1),
       switchMap(() => {
-        console.log('Checking roles for access:', requiredRoles);
         if (!authService.isAuthenticated()) {
           return [router.parseUrl('/unauthorized')];
         }

@@ -15,24 +15,10 @@ import { provideTranslateService, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { MessageService } from 'primeng/api';
 import { TranslationLoaderService } from './translation-loader.service';
-import {
-  AutoRefreshTokenService,
-  createInterceptorCondition,
-  INCLUDE_BEARER_TOKEN_INTERCEPTOR_CONFIG,
-  IncludeBearerTokenCondition,
-  provideKeycloak,
-  UserActivityService,
-  withAutoRefreshToken,
-} from 'keycloak-angular';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './i18n/', '/common.json');
 }
-
-const urlCondition = createInterceptorCondition<IncludeBearerTokenCondition>({
-  urlPattern: environment.api.urlPattern,
-  bearerPrefix: 'Bearer',
-});
 
 @NgModule({
   declarations: [AppComponent],
@@ -45,30 +31,6 @@ const urlCondition = createInterceptorCondition<IncludeBearerTokenCondition>({
     // Components
   ],
   providers: [
-    provideKeycloak({
-      config: {
-        url: environment.keycloak.url,
-        realm: environment.keycloak.realm,
-        clientId: environment.keycloak.clientId,
-      },
-      initOptions: {
-        onLoad: 'check-sso',
-        silentCheckSsoRedirectUri: window.location.origin + '/silent-check-sso.html',
-        redirectUri: window.location.origin + '/',
-        checkLoginIframe: false,
-      },
-      features: [
-        withAutoRefreshToken({
-          onInactivityTimeout: 'logout',
-          sessionTimeout: 60000,
-        }),
-      ],
-      providers: [AutoRefreshTokenService, UserActivityService],
-    }),
-    {
-      provide: INCLUDE_BEARER_TOKEN_INTERCEPTOR_CONFIG,
-      useValue: [urlCondition],
-    },
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(
       appRoutes,

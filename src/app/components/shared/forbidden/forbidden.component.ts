@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'sm-forbidden',
+  selector: 'tia-forbidden',
   imports: [],
   templateUrl: './forbidden.component.html',
   styleUrl: './forbidden.component.scss',

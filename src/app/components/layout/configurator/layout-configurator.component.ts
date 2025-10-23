@@ -55,7 +55,7 @@ declare interface SurfacesType {
 }
 
 @Component({
-  selector: 'sm-layout-configurator',
+  selector: 'tia-layout-configurator',
   imports: [CommonModule, FormsModule, SelectButtonModule],
   templateUrl: './layout-configurator.component.html',
 
