@@ -1,0 +1,66 @@
+<div class="stepper-container">
+  <div class="stepper-header border-2 p-4 rounded-xl mb-4">
+    <div class="stepper-wrapper">
+      <div *ngFor="let panel of stepPanels; let i = index" class="step-item">
+        <div class="step-circle-wrapper">
+          <div
+            class="step-circle border-2 rounded-full w-12 h-12 flex items-center justify-center font-semibold text-base transition-all duration-300"
+            [ngClass]="{
+              'bg-primary border-primary text-white': isStepActive(i) || isStepCompleted(i),
+              'bg-gray-300 border-gray-300 text-white': !isStepActive(i) && !isStepCompleted(i)
+            }"
+          >
+            <span class="step-number">{{ i + 1 }}</span>
+          </div>
+          <div class="step-labels">
+            <span class="step-label">{{ panel.label }}</span>
+            <span *ngIf="panel.subLabel" class="step-sublabel">{{ panel.subLabel }}</span>
+          </div>
+        </div>
+        <div
+          *ngIf="i < stepPanels.length - 1"
+          class="step-connector h-[2px] flex-1 mx-4 mt-6 relative top-0 transition-colors duration-300"
+          [ngClass]="{
+            'bg-primary': isStepCompleted(i),
+            'bg-gray-300': !isStepCompleted(i)
+          }"
+        ></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stepper-content p-6 border-2 rounded-xl">
+    <div *ngFor="let panel of stepPanels; let i = index" [hidden]="!isStepActive(i)">
+      <ng-container *ngTemplateOutlet="panel.content"></ng-container>
+    </div>
+  </div>
+
+  <div class="stepper-actions">
+    <button
+      type="button"
+      class="btn-previous"
+      (click)="prevStep()"
+      [disabled]="activeIndex === 0"
+    >
+      <i class="pi pi-arrow-left"></i>
+      Précédent
+    </button>
+    <button
+      type="button"
+      class="btn-next bg-primary hover:bg-primary-800 text-white"
+      (click)="nextStep()"
+      *ngIf="activeIndex < stepPanels.length - 1"
+    >
+      Suivant
+      <i class="pi pi-arrow-right"></i>
+    </button>
+    <button
+      type="submit"
+      class="btn-submit"
+      *ngIf="activeIndex === stepPanels.length - 1"
+    >
+      Soumettre
+      <i class="pi pi-check"></i>
+    </button>
+  </div>
+</div>

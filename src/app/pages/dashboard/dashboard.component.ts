@@ -1,10 +1,12 @@
 import { DynamicFormComponent } from '@/components/shared/dynamic-form/dynamic-form.component';
 import { FormConfig } from '@/components/shared/dynamic-form/dynamic-form.types';
+import { StepperFormComponent } from '@/components/shared/stepper-form/stepper-form.component';
+import { StepperPanelComponent } from '@/components/shared/stepper-form/stepper-panel.component';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'tia-dashboard',
-  imports: [DynamicFormComponent],
+  imports: [DynamicFormComponent, StepperFormComponent, StepperPanelComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
 })

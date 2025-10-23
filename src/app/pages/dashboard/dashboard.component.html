@@ -1,9 +1,133 @@
-<div class="flex flex-col w-full my-5 px-4">
-  <h1 class="text-3xl font-bold">Dashboard</h1>
-  <p class="text-lg">Welcome to the dashboard!</p>
-     <tia-dynamic-form
-      [config]="formConfig"
-      [submitButtonLabel]="'Submit'"
-      (formSubmit)="onSubmit($event)"
-    />
+<div class="container mx-auto p-6">
+  <div class="page-header">
+    <h1 class="page-title">Formulaire de demande d'attestation de dépôt de déclaration d'investissement – Personne Physique</h1>
+  </div>
+
+  <div class="form-card">
+    <tia-pro-stepper>
+      <tia-stepper-panel label="Informations" subLabel="relatives au déclarant">
+        <div class="form-step-content">
+          <tia-dynamic-form [config]="formConfig" [submitButtonLabel]="'Submit'" (formSubmit)="onSubmit($event)" />
+        </div>
+      </tia-stepper-panel>
+
+      <tia-stepper-panel label="Informations" subLabel="relatives au promoteur">
+        <div class="form-step-content">
+          <p class="step-description">Renseignez les informations concernant le promoteur du projet.</p>
+
+          <div class="form-grid">
+            <div class="form-field">
+              <span>Nom du promoteur *</span>
+              <input type="text" class="form-control" placeholder="Nom complet" />
+            </div>
+            <div class="form-field">
+              <span>Fonction *</span>
+              <input type="text" class="form-control" placeholder="Fonction" />
+            </div>
+          </div>
+        </div>
+      </tia-stepper-panel>
+
+      <tia-stepper-panel label="Informations" subLabel="relatives à la société">
+        <div class="form-step-content">
+          <p class="step-description">Détails sur la société concernée par l'investissement.</p>
+
+          <div class="form-grid">
+            <div class="form-field">
+              <span>Raison sociale *</span>
+              <input type="text" class="form-control" placeholder="Raison sociale" />
+            </div>
+            <div class="form-field">
+              <span>Forme juridique *</span>
+              <select class="form-control">
+                <option>Sélectionnez la forme juridique</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </tia-stepper-panel>
+
+      <tia-stepper-panel label="Informations" subLabel="relatives au projet">
+        <div class="form-step-content">
+          <p class="step-description">Décrivez votre projet d'investissement.</p>
+
+          <div class="form-grid">
+            <div class="form-field full-width">
+              <span>Description du projet *</span>
+              <textarea class="form-control" rows="4" placeholder="Décrivez votre projet"></textarea>
+            </div>
+          </div>
+        </div>
+      </tia-stepper-panel>
+
+      <tia-stepper-panel label="Création" subLabel="d'emploi">
+        <div class="form-step-content">
+          <p class="step-description">Informations sur la création d'emplois prévue.</p>
+
+          <div class="form-grid">
+            <div class="form-field">
+              <span>Nombre d'emplois créés *</span>
+              <input type="number" class="form-control" placeholder="0" />
+            </div>
+          </div>
+        </div>
+      </tia-stepper-panel>
+
+      <tia-stepper-panel label="Schéma" subLabel="d'investissement">
+        <div class="form-step-content">
+          <p class="step-description">Détaillez le schéma d'investissement.</p>
+
+          <div class="form-grid">
+            <div class="form-field">
+              <span>Montant de l'investissement *</span>
+              <input type="number" class="form-control" placeholder="0.00" />
+            </div>
+          </div>
+        </div>
+      </tia-stepper-panel>
+
+      <tia-stepper-panel label="Calendrier" subLabel="prévisionnel">
+        <div class="form-step-content">
+          <p class="step-description">Calendrier prévisionnel du projet.</p>
+
+          <div class="form-grid">
+            <div class="form-field">
+              <span>Date de début *</span>
+              <input type="date" class="form-control" />
+            </div>
+            <div class="form-field">
+              <span>Date de fin *</span>
+              <input type="date" class="form-control" />
+            </div>
+          </div>
+        </div>
+      </tia-stepper-panel>
+
+      <tia-stepper-panel label="Avantages" subLabel="demandés">
+        <div class="form-step-content">
+          <p class="step-description">Sélectionnez les avantages fiscaux demandés.</p>
+
+          <div class="form-grid">
+            <div class="form-field full-width">
+              <span>Type d'avantages *</span>
+              <select class="form-control">
+                <option>Sélectionnez les avantages</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </tia-stepper-panel>
+
+      <tia-stepper-panel label="Soumission" subLabel="finale">
+        <div class="form-step-content">
+          <p class="step-description">Vérifiez vos informations avant la soumission finale.</p>
+
+          <div class="summary-section">
+            <h3>Récapitulatif de votre déclaration</h3>
+            <p>Veuillez vérifier toutes les informations avant de soumettre votre déclaration.</p>
+          </div>
+        </div>
+      </tia-stepper-panel>
+    </tia-pro-stepper>
+  </div>
 </div>

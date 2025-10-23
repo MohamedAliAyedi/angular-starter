@@ -1,0 +1,175 @@
+.stepper-container {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.stepper-header {
+  padding: 2rem 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.stepper-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
+  padding: 0 2rem;
+}
+
+.step-item {
+  display: flex;
+  align-items: flex-start;
+  flex: 1;
+  position: relative;
+
+  &:last-child {
+    flex: 0;
+
+    .step-connector {
+      display: none;
+    }
+  }
+}
+
+.step-circle-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  position: relative;
+  z-index: 2;
+}
+
+.step-circle {
+  transition: all 0.3s ease;
+}
+
+.step-number {
+  font-weight: 600;
+}
+
+.step-labels {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 120px;
+}
+
+.step-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #1f2937;
+  line-height: 1.2;
+}
+
+.step-sublabel {
+  font-size: 0.625rem;
+  color: #6b7280;
+  line-height: 1.2;
+  margin-top: 0.125rem;
+}
+
+.step-connector {
+  transition: background-color 0.3s ease;
+}
+
+.stepper-content {
+  padding: 2rem;
+  min-height: 400px;
+}
+
+.stepper-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  border-top: 1px solid #e5e7eb;
+  gap: 1rem;
+}
+
+.btn-previous,
+.btn-next,
+.btn-submit {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  i {
+    font-size: 0.875rem;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.btn-previous {
+  background-color: #6b7280;
+  color: white;
+
+  &:hover:not(:disabled) {
+    background-color: #4b5563;
+  }
+}
+
+.btn-next,
+.btn-submit {
+  margin-left: auto;
+
+  &:hover:not(:disabled) {
+    background-color: --primary;
+  }
+}
+
+@media (max-width: 768px) {
+  .stepper-wrapper {
+    padding: 0 1rem;
+  }
+
+  .step-circle {
+    width: 40px;
+    height: 40px;
+    font-size: 0.875rem;
+  }
+
+  .step-labels {
+    max-width: 80px;
+  }
+
+  .step-label {
+    font-size: 0.625rem;
+  }
+
+  .step-sublabel {
+    font-size: 0.5rem;
+  }
+
+  .step-connector {
+    margin: 20px 0.5rem 0 0.5rem;
+  }
+
+  .stepper-content {
+    padding: 1rem;
+    min-height: 300px;
+  }
+
+  .stepper-actions {
+    padding: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-previous,
+  .btn-next,
+  .btn-submit {
+    padding: 0.625rem 1rem;
+    font-size: 0.8125rem;
+  }
+}
